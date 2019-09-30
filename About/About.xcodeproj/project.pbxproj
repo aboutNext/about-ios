@@ -12,6 +12,14 @@
 		FB38689D2342461600936BCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB38689B2342461600936BCC /* Main.storyboard */; };
 		FB38689F2342461700936BCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB38689E2342461700936BCC /* Assets.xcassets */; };
 		FB3868A22342461700936BCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3868A02342461700936BCC /* LaunchScreen.storyboard */; };
+		FBA3864523424A820089E060 /* MainCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3864323424A820089E060 /* MainCardTableViewCell.swift */; };
+		FBA3864623424A820089E060 /* MainCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA3864423424A820089E060 /* MainCardTableViewCell.xib */; };
+		FBA3864823424A9C0089E060 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3864723424A9C0089E060 /* MainViewController.swift */; };
+		FBA3864A23424AB60089E060 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3864923424AB60089E060 /* PhotoViewController.swift */; };
+		FBA3865123424B2A0089E060 /* DetailCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3865023424B2A0089E060 /* DetailCardViewController.swift */; };
+		FBA3865323424B590089E060 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3865223424B590089E060 /* ProfileViewController.swift */; };
+		FBA3865723424F240089E060 /* PhotoViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3865523424F240089E060 /* PhotoViewCollectionViewCell.swift */; };
+		FBA3865823424F240089E060 /* PhotoViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA3865623424F240089E060 /* PhotoViewCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,14 @@
 		FB38689E2342461700936BCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB3868A12342461700936BCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB3868A32342461700936BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBA3864323424A820089E060 /* MainCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardTableViewCell.swift; sourceTree = "<group>"; };
+		FBA3864423424A820089E060 /* MainCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCardTableViewCell.xib; sourceTree = "<group>"; };
+		FBA3864723424A9C0089E060 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FBA3864923424AB60089E060 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		FBA3865023424B2A0089E060 /* DetailCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCardViewController.swift; sourceTree = "<group>"; };
+		FBA3865223424B590089E060 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FBA3865523424F240089E060 /* PhotoViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		FBA3865623424F240089E060 /* PhotoViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,10 @@
 		FB3868962342461600936BCC /* About */ = {
 			isa = PBXGroup;
 			children = (
+				FBA3864D23424ADD0089E060 /* Main */,
+				FBA3864F23424B0E0089E060 /* Detail */,
+				FBA3864E23424AEE0089E060 /* Photo */,
+				FBA3865423424B600089E060 /* Profile */,
 				FB3868972342461600936BCC /* AppDelegate.swift */,
 				FB3868992342461600936BCC /* ViewController.swift */,
 				FB38689B2342461600936BCC /* Main.storyboard */,
@@ -62,6 +82,42 @@
 				FB3868A32342461700936BCC /* Info.plist */,
 			);
 			path = About;
+			sourceTree = "<group>";
+		};
+		FBA3864D23424ADD0089E060 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FBA3864723424A9C0089E060 /* MainViewController.swift */,
+				FBA3864323424A820089E060 /* MainCardTableViewCell.swift */,
+				FBA3864423424A820089E060 /* MainCardTableViewCell.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FBA3864E23424AEE0089E060 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				FBA3864923424AB60089E060 /* PhotoViewController.swift */,
+				FBA3865523424F240089E060 /* PhotoViewCollectionViewCell.swift */,
+				FBA3865623424F240089E060 /* PhotoViewCollectionViewCell.xib */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		FBA3864F23424B0E0089E060 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FBA3865023424B2A0089E060 /* DetailCardViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		FBA3865423424B600089E060 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FBA3865223424B590089E060 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,7 +178,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA3864623424A820089E060 /* MainCardTableViewCell.xib in Resources */,
 				FB3868A22342461700936BCC /* LaunchScreen.storyboard in Resources */,
+				FBA3865823424F240089E060 /* PhotoViewCollectionViewCell.xib in Resources */,
 				FB38689F2342461700936BCC /* Assets.xcassets in Resources */,
 				FB38689D2342461600936BCC /* Main.storyboard in Resources */,
 			);
@@ -135,8 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA3865723424F240089E060 /* PhotoViewCollectionViewCell.swift in Sources */,
 				FB38689A2342461600936BCC /* ViewController.swift in Sources */,
 				FB3868982342461600936BCC /* AppDelegate.swift in Sources */,
+				FBA3864523424A820089E060 /* MainCardTableViewCell.swift in Sources */,
+				FBA3865123424B2A0089E060 /* DetailCardViewController.swift in Sources */,
+				FBA3864823424A9C0089E060 /* MainViewController.swift in Sources */,
+				FBA3865323424B590089E060 /* ProfileViewController.swift in Sources */,
+				FBA3864A23424AB60089E060 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
