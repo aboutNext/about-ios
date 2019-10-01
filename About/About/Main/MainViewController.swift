@@ -7,22 +7,88 @@
 //
 
 import UIKit
+import Photos
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var galleryBarButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    let picker = UIImagePickerController()
+    var image: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-
+        picker.delegate = self
     }
     
     func setupUI() {
         let nibName = UINib(nibName: "MainCardTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "MainCardTableViewCell")
         self.view.addSubview(self.tableView)
+    }
+    
+    @IBAction func touchUpSelectNewImage(_ sender: Any) {
+
+//         checkPermission {
+//            openCamera()
+            self.openLibrary()
+//        }
+    }
+    
+    func checkPermission(hanler: @escaping () -> Void) {
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoAuthorizationStatus {
+        case .authorized:
+            // Access is already granted by user
+            hanler()
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { (newStatus) in
+                if newStatus == PHAuthorizationStatus.authorized {
+                    // Access is granted by user
+                    hanler()
+                }
+            }
+        default:
+            print("Error: no access to photo album.")
+        }
+    }
+    
+    func openLibrary() {
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        picker.allowsEditing = false
+        present(picker, animated: false, completion: nil)
+    }
+    
+    func openCamera() {
+        if UIImagePickerController .isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+            present(picker, animated: false, completion: nil)
+        } else {
+            print("Camera not available")
+        }
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            image = selectedImage
+            tableView.reloadData()
+//            showDetailViewController()
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    private func showDetailViewController() {
+        guard let selectedImage = image else { return }
+        let vc = DetailCardViewController.instanceViewController(image: selectedImage)
+        present(vc, animated: true, completion: nil)
     }
 }
 
@@ -40,7 +106,9 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainCardTableViewCell", for: indexPath) as! MainCardTableViewCell
         cell.dateLabel.text = "19.10.1"
-        cell.backgroundColor = UIColor.yellow
+        if let testImage = self.image {
+            cell.backgroundImageView.image = testImage
+        }
         return cell
     }
 }

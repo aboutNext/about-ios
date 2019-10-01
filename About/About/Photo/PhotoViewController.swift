@@ -17,12 +17,10 @@ class PhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
     }
     
     func setupUI() {
-        self.collectionView.register(PhotoViewCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
-
+    self.collectionView.register(PhotoViewCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
         
     }
 }

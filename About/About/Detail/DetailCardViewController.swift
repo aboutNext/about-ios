@@ -10,6 +10,15 @@ import UIKit
 
 class DetailCardViewController: UIViewController {
 
+    var image: UIImage?
+    static func instanceViewController(image: UIImage) -> DetailCardViewController {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailCardViewController") as! DetailCardViewController
+        
+        controller.image = image
+        
+        return controller
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

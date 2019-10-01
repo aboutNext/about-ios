@@ -10,6 +10,7 @@ import UIKit
 
 class MainCardTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
