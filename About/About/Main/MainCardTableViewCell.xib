@@ -20,11 +20,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="DT6-7f-a41">
-                        <rect key="frame" x="20" y="10" width="280" height="79.5"/>
+                        <rect key="frame" x="60" y="10" width="200" height="79.5"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19.10.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sm-yl-hLY">
-                        <rect key="frame" x="230" y="68.5" width="70" height="21"/>
+                        <rect key="frame" x="190" y="68.5" width="70" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="Y8H-yf-3bA"/>
                             <constraint firstAttribute="height" constant="21" id="vJs-ha-fKQ"/>
@@ -36,10 +36,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="7Sm-yl-hLY" firstAttribute="bottom" secondItem="DT6-7f-a41" secondAttribute="bottom" id="2K3-cL-mNz"/>
-                    <constraint firstItem="DT6-7f-a41" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="EcM-9H-K5o"/>
+                    <constraint firstItem="DT6-7f-a41" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="EcM-9H-K5o"/>
                     <constraint firstAttribute="bottom" secondItem="DT6-7f-a41" secondAttribute="bottom" constant="10" id="Tol-RV-YJd"/>
                     <constraint firstItem="7Sm-yl-hLY" firstAttribute="trailing" secondItem="DT6-7f-a41" secondAttribute="trailing" id="fqY-Jp-KXk"/>
-                    <constraint firstAttribute="trailing" secondItem="DT6-7f-a41" secondAttribute="trailing" constant="20" id="mfP-m9-JFi"/>
+                    <constraint firstAttribute="trailing" secondItem="DT6-7f-a41" secondAttribute="trailing" constant="60" id="mfP-m9-JFi"/>
                     <constraint firstItem="DT6-7f-a41" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="pKW-5f-05C"/>
                 </constraints>
             </tableViewCellContentView>

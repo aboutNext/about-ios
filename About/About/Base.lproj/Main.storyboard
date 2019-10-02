@@ -26,25 +26,37 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="mLO-3i-hbE"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTh-ZW-vCR">
+                                <rect key="frame" x="290" y="572" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.47803407910000001" green="0.50568515059999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="AA3-b0-1tV"/>
+                                    <constraint firstAttribute="width" constant="65" id="OyU-v0-gTR"/>
+                                </constraints>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1DU-C1-vdj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JmX-p1-fTU"/>
                             <constraint firstItem="1DU-C1-vdj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Up9-vA-ImE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1DU-C1-vdj" secondAttribute="trailing" id="X8u-Te-SGY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eTh-ZW-vCR" secondAttribute="trailing" constant="20" id="arO-cb-Etl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eTh-ZW-vCR" secondAttribute="bottom" constant="30" id="kBe-bn-VuI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1DU-C1-vdj" secondAttribute="bottom" id="u7h-su-JGX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zs6-Cs-Yb0">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="U1j-bs-9h6">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="compose" id="O6r-pY-aEG">
                             <connections>
-                                <action selector="touchUpSelectNewImage:" destination="BYZ-38-t0r" id="mqB-lX-ubW"/>
+                                <action selector="touchUpSelectNewImage:" destination="BYZ-38-t0r" id="zbb-a5-8wp"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="More" style="plain" id="U1j-bs-9h6"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="galleryBarButton" destination="U1j-bs-9h6" id="LhE-qD-4Eo"/>
+                        <outlet property="cardButton" destination="eTh-ZW-vCR" id="hsB-lZ-7rR"/>
+                        <outlet property="galleryBarButton" destination="O6r-pY-aEG" id="K11-Vx-FY8"/>
                         <outlet property="tableView" destination="1DU-C1-vdj" id="vpZ-2U-cdE"/>
                     </connections>
                 </viewController>
@@ -59,13 +71,25 @@
                     <view key="view" contentMode="scaleToFill" id="XUE-73-Zl3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIP-yG-Rd2">
+                                <rect key="frame" x="100" y="20" width="275" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QIP-yG-Rd2" firstAttribute="top" secondItem="lN1-v3-YGJ" secondAttribute="top" id="1rY-0t-hIE"/>
+                            <constraint firstItem="QIP-yG-Rd2" firstAttribute="leading" secondItem="lN1-v3-YGJ" secondAttribute="leading" constant="100" id="qS1-q1-bzd"/>
+                            <constraint firstAttribute="bottom" secondItem="QIP-yG-Rd2" secondAttribute="bottom" id="wFh-pS-9oL"/>
+                            <constraint firstItem="lN1-v3-YGJ" firstAttribute="trailing" secondItem="QIP-yG-Rd2" secondAttribute="trailing" id="xza-Eb-O4a"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lN1-v3-YGJ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvu-4C-vN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="143" y="762"/>
+            <point key="canvasLocation" x="127" y="771"/>
         </scene>
         <!--Detail Card View Controller-->
         <scene sceneID="kCY-7w-udS">

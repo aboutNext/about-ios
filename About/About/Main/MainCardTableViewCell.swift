@@ -15,9 +15,14 @@ class MainCardTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupUI()
     }
 
+    private func setupUI() {
+        backgroundImageView.layer.cornerRadius = 10
+        backgroundImageView.layer.masksToBounds = true
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

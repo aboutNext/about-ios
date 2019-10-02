@@ -13,6 +13,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     @IBOutlet weak var galleryBarButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cardButton: UIButton!
     let picker = UIImagePickerController()
     var image: UIImage?
     
@@ -25,7 +26,15 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func setupUI() {
         let nibName = UINib(nibName: "MainCardTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "MainCardTableViewCell")
-        self.view.addSubview(self.tableView)
+        self.view.addSubview(tableView)
+        self.view.addSubview(cardButton)
+        cardButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        cardButton.layer.masksToBounds = false
+        cardButton.layer.shadowRadius = 1.0
+        cardButton.layer.shadowOpacity = 0.5
+        cardButton.layer.cornerRadius = cardButton.frame.width / 2
+        cardButton.addTarget(self, action: #selector(cardButtonClick(_:)), for: .touchUpInside)
+
     }
     
     @IBAction func touchUpSelectNewImage(_ sender: Any) {
@@ -34,6 +43,10 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 //            openCamera()
             self.openLibrary()
 //        }
+    }
+    
+    @objc func cardButtonClick(_ sender: UIButton){
+        self.openLibrary()
     }
     
     func checkPermission(hanler: @escaping () -> Void) {
