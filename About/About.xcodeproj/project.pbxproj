@@ -12,6 +12,7 @@
 		FB38689D2342461600936BCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB38689B2342461600936BCC /* Main.storyboard */; };
 		FB38689F2342461700936BCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB38689E2342461700936BCC /* Assets.xcassets */; };
 		FB3868A22342461700936BCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3868A02342461700936BCC /* LaunchScreen.storyboard */; };
+		FB6687DD234D7A8E0092F9F9 /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6687DC234D7A8E0092F9F9 /* CardData.swift */; };
 		FBA3864523424A820089E060 /* MainCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3864323424A820089E060 /* MainCardTableViewCell.swift */; };
 		FBA3864623424A820089E060 /* MainCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA3864423424A820089E060 /* MainCardTableViewCell.xib */; };
 		FBA3864823424A9C0089E060 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA3864723424A9C0089E060 /* MainViewController.swift */; };
@@ -30,6 +31,7 @@
 		FB38689E2342461700936BCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB3868A12342461700936BCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB3868A32342461700936BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB6687DC234D7A8E0092F9F9 /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 		FBA3864323424A820089E060 /* MainCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardTableViewCell.swift; sourceTree = "<group>"; };
 		FBA3864423424A820089E060 /* MainCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCardTableViewCell.xib; sourceTree = "<group>"; };
 		FBA3864723424A9C0089E060 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -84,12 +86,29 @@
 			path = About;
 			sourceTree = "<group>";
 		};
-		FBA3864D23424ADD0089E060 /* Main */ = {
+		FB6687DF234D8AA30092F9F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB6687DC234D7A8E0092F9F9 /* CardData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB6687E0234D8AB30092F9F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				FBA3864723424A9C0089E060 /* MainViewController.swift */,
 				FBA3864323424A820089E060 /* MainCardTableViewCell.swift */,
 				FBA3864423424A820089E060 /* MainCardTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FBA3864D23424ADD0089E060 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FB6687E0234D8AB30092F9F9 /* View */,
+				FB6687DF234D8AA30092F9F9 /* Model */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -199,6 +218,7 @@
 				FBA3864523424A820089E060 /* MainCardTableViewCell.swift in Sources */,
 				FBA3865123424B2A0089E060 /* DetailCardViewController.swift in Sources */,
 				FBA3864823424A9C0089E060 /* MainViewController.swift in Sources */,
+				FB6687DD234D7A8E0092F9F9 /* CardData.swift in Sources */,
 				FBA3865323424B590089E060 /* ProfileViewController.swift in Sources */,
 				FBA3864A23424AB60089E060 /* PhotoViewController.swift in Sources */,
 			);

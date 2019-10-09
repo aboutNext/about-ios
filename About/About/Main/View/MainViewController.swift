@@ -16,11 +16,14 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var cardButton: UIButton!
     let picker = UIImagePickerController()
     var image: UIImage?
+    var cards = [CardData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         picker.delegate = self
+        makeTestData()
+      
     }
     
     func setupUI() {
@@ -67,14 +70,14 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-    func openLibrary() {
+    private func openLibrary() {
         picker.sourceType = .photoLibrary
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         picker.allowsEditing = false
         present(picker, animated: false, completion: nil)
     }
     
-    func openCamera() {
+    private func openCamera() {
         if UIImagePickerController .isSourceTypeAvailable(.camera) {
             picker.sourceType = .camera
             present(picker, animated: false, completion: nil)
@@ -92,9 +95,13 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             image = selectedImage
-            tableView.reloadData()
-//            showDetailViewController()
-            dismiss(animated: true, completion: nil)
+            var newCard = CardData.init(cardID: UUID(), date: Date())
+            newCard.image = image
+            cards.insert(newCard, at: 0)
+        }
+        dismiss(animated: true) {
+            self.tableView.reloadData()
+//            self.showDetailViewController()
         }
     }
     
@@ -102,6 +109,15 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         guard let selectedImage = image else { return }
         let vc = DetailCardViewController.instanceViewController(image: selectedImage)
         present(vc, animated: true, completion: nil)
+    }
+    
+    private func makeTestData() {
+        for _ in 0..<5 {
+            var card = CardData.init(cardID: UUID(), date: Date())
+            card.imageName = "image1"
+            cards.append(card)
+        }
+        tableView.reloadData()
     }
 }
 
@@ -113,14 +129,25 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return cards.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainCardTableViewCell", for: indexPath) as! MainCardTableViewCell
-        cell.dateLabel.text = "19.10.1"
-        if let testImage = self.image {
+        let card = cards[indexPath.row]
+
+        //Date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM.dd"
+        let dateString =  dateFormatter.string(from: card.date)
+        cell.dateLabel.text = dateString
+        
+        if let name = card.imageName, let testImage = UIImage(named: name) {
             cell.backgroundImageView.image = testImage
+        }
+        //test
+        if let image = card.image {
+            cell.backgroundImageView.image = image
         }
         return cell
     }
