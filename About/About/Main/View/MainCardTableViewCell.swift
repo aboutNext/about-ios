@@ -19,7 +19,7 @@ class MainCardTableViewCell: UITableViewCell {
     }
 
     private func setupUI() {
-        backgroundImageView.layer.cornerRadius = 10
+//        backgroundImageView.layer.cornerRadius = 10
         backgroundImageView.layer.masksToBounds = true
     }
     

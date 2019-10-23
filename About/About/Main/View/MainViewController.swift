@@ -11,7 +11,6 @@ import Photos
 
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var galleryBarButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cardButton: UIButton!
     let picker = UIImagePickerController()
@@ -37,15 +36,6 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         cardButton.layer.shadowOpacity = 0.5
         cardButton.layer.cornerRadius = cardButton.frame.width / 2
         cardButton.addTarget(self, action: #selector(cardButtonClick(_:)), for: .touchUpInside)
-
-    }
-    
-    @IBAction func touchUpSelectNewImage(_ sender: Any) {
-
-//         checkPermission {
-//            openCamera()
-            self.openLibrary()
-//        }
     }
     
     @objc func cardButtonClick(_ sender: UIButton){
@@ -132,13 +122,24 @@ extension MainViewController: UITableViewDataSource {
         return cards.count
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+            headerView.backgroundColor = UIColor.lightGray
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        //임시 설정
+        return CardConstant.mainTableViewSectionHeaderHeight
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainCardTableViewCell", for: indexPath) as! MainCardTableViewCell
         let card = cards[indexPath.row]
 
         //Date
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM.dd"
+        dateFormatter.dateFormat = "yy.MM.dd"
         let dateString =  dateFormatter.string(from: card.date)
         cell.dateLabel.text = dateString
         
