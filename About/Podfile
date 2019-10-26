@@ -8,5 +8,6 @@ target 'About' do
   # Pods for About
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
 end
