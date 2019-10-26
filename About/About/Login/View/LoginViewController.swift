@@ -17,28 +17,28 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
          super.viewDidLoad()
          GIDSignIn.sharedInstance().presentingViewController = self
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn();
-//        [[GIDSignIn sharedInstance] restorePreviousSignIn];
-         // Do any additional setup after loading the view.
+         GIDSignIn.sharedInstance()?.restorePreviousSignIn();
      }
+    
     @IBAction func onClickGoogleButton(_ sender: Any) {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        
+        GIDSignIn.sharedInstance().signIn()
     
     }
     
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
       -> Bool {
-        return GIDSignIn.sharedInstance().handle(url)
-//        return GIDSignIn.sharedInstance().handle(url,
-//                                sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-//                                annotation: [:])
+        let googleDidHandle = GIDSignIn.sharedInstance().handle(url)
+        
+        return googleDidHandle
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return GIDSignIn.sharedInstance().handle(url)
     }
-
-
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
       // ...
