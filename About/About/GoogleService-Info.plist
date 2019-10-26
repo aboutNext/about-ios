@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>244835131423-982ncv0m102d33vue5b2lf22d252ipmf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.244835131423-982ncv0m102d33vue5b2lf22d252ipmf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA2Yd_eKvy4QL8Q2gNXPWyo2kMxysaIHr4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>244835131423</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>celline.About</string>
+	<key>PROJECT_ID</key>
+	<string>about-20afb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>about-20afb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:244835131423:ios:49d638f09e7f3022a1752a</string>
+	<key>DATABASE_URL</key>
+	<string>https://about-20afb.firebaseio.com</string>
+</dict>
+</plist>
