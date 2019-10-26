@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		02F19135309E70A5E8F1AF9E /* Pods_About.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58457FB7B2343CA5AF4FA609 /* Pods_About.framework */; };
 		049883102364361E00E058F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0498830F2364361E00E058F5 /* GoogleService-Info.plist */; };
+		0498831423645CF300E058F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498831323645CF300E058F5 /* LoginViewController.swift */; };
 		FB3868982342461600936BCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3868972342461600936BCC /* AppDelegate.swift */; };
 		FB38689A2342461600936BCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3868992342461600936BCC /* ViewController.swift */; };
 		FB38689D2342461600936BCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB38689B2342461600936BCC /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		0498830F2364361E00E058F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0498831323645CF300E058F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		58457FB7B2343CA5AF4FA609 /* Pods_About.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_About.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79C17142F4FB7BF7EBC5F3E /* Pods-About.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-About.debug.xcconfig"; path = "Target Support Files/Pods-About/Pods-About.debug.xcconfig"; sourceTree = "<group>"; };
 		C0AE09BF817AC9E16939B453 /* Pods-About.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-About.release.xcconfig"; path = "Target Support Files/Pods-About/Pods-About.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,6 +64,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0498831123645CCE00E058F5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0498831223645CD800E058F5 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0498831223645CD800E058F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0498831323645CF300E058F5 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0DC3DDE80453C74768E49AEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +94,6 @@
 				A79C17142F4FB7BF7EBC5F3E /* Pods-About.debug.xcconfig */,
 				C0AE09BF817AC9E16939B453 /* Pods-About.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -101,6 +118,7 @@
 		FB3868962342461600936BCC /* About */ = {
 			isa = PBXGroup;
 			children = (
+				0498831123645CCE00E058F5 /* Login */,
 				FB646FCC2360812B00625987 /* Util */,
 				FBA3864D23424ADD0089E060 /* Main */,
 				FBA3864F23424B0E0089E060 /* Detail */,
@@ -324,6 +342,7 @@
 				FB6687DD234D7A8E0092F9F9 /* CardData.swift in Sources */,
 				FBA3865323424B590089E060 /* ProfileViewController.swift in Sources */,
 				FBA3864A23424AB60089E060 /* PhotoViewController.swift in Sources */,
+				0498831423645CF300E058F5 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
